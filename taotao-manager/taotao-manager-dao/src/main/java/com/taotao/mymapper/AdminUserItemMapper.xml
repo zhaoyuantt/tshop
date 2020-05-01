@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mymapper.AdminUserItemMapper">
+
+	<!-- 查询某个用户发布的商品 -->
+	<select id="getItemListByUserAdminIdWithCondition" resultType="com.taotao.pojo.TbItem">
+		SELECT
+		i.id id,
+		i.title title,
+		i.sell_point sellPoint,
+		i.price price,
+		i.num num,
+		i.barcode barcode,
+		i.image image,
+		i.cid cid,
+		i.status status,
+		i.created created,
+		i.updated updated
+		FROM
+		tb_admin_user u
+		INNER JOIN tb_admin_user_item ui ON u.id = ui.useradmin_id
+		INNER JOIN tb_item i ON ui.item_id = i.id
+		WHERE
+		u.id = #{adminUserId}
+		<include refid="query_itemWithAdminUser_where"></include>
+	</select>
+
+	<!-- 查询条件拼接 -->
+	<sql id="query_itemWithAdminUser_where">
+		<if test="item != null">
+			<if test="item.title != null and item.title != ''">
+				AND i.title LIKE '%${item.title}%'
+			</if>
+			<if test="item.sellPoint != null and item.sellPoint != ''">
+				AND i.sell_point LIKE '%${item.sellPoint}%'
+			</if>
+		</if>
+	</sql>
+	
+	<!-- 查询某个用户发布的商品，无查询条件 -->
+	<select id="getItemListByUserAdminId" resultType="com.taotao.pojo.TbItem">
+		SELECT
+		i.id id,
+		i.title title,
+		i.sell_point sellPoint,
+		i.price price,
+		i.num num,
+		i.barcode barcode,
+		i.image image,
+		i.cid cid,
+		i.status status,
+		i.created created,
+		i.updated updated
+		FROM
+		tb_admin_user u
+		INNER JOIN tb_admin_user_item ui ON u.id = ui.useradmin_id
+		INNER JOIN tb_item i ON ui.item_id = i.id
+		WHERE
+		u.id = #{adminUserId}
+	</select>
+</mapper>

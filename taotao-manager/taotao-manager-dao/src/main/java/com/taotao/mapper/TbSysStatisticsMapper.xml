@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mapper.TbSysStatisticsMapper" >
+  <resultMap id="BaseResultMap" type="com.taotao.pojo.TbSysStatistics" >
+    <id column="id" property="id" jdbcType="TINYINT" />
+    <result column="item_num" property="itemNum" jdbcType="BIGINT" />
+    <result column="item_up_num" property="itemUpNum" jdbcType="BIGINT" />
+    <result column="item_down_num" property="itemDownNum" jdbcType="INTEGER" />
+    <result column="item_param_num" property="itemParamNum" jdbcType="BIGINT" />
+    <result column="job_time" property="jobTime" jdbcType="TIMESTAMP" />
+    <result column="job_date" property="jobDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, item_num, item_up_num, item_down_num, item_param_num, job_time, job_date
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.taotao.pojo.TbSysStatisticsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_sys_statistics
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Byte" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_sys_statistics
+    where id = #{id,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte" >
+    delete from tb_sys_statistics
+    where id = #{id,jdbcType=TINYINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.taotao.pojo.TbSysStatisticsExample" >
+    delete from tb_sys_statistics
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.taotao.pojo.TbSysStatistics" >
+    insert into tb_sys_statistics (id, item_num, item_up_num, 
+      item_down_num, item_param_num, job_time, 
+      job_date)
+    values (#{id,jdbcType=TINYINT}, #{itemNum,jdbcType=BIGINT}, #{itemUpNum,jdbcType=BIGINT}, 
+      #{itemDownNum,jdbcType=INTEGER}, #{itemParamNum,jdbcType=BIGINT}, #{jobTime,jdbcType=TIMESTAMP}, 
+      #{jobDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.taotao.pojo.TbSysStatistics" >
+    insert into tb_sys_statistics
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="itemNum != null" >
+        item_num,
+      </if>
+      <if test="itemUpNum != null" >
+        item_up_num,
+      </if>
+      <if test="itemDownNum != null" >
+        item_down_num,
+      </if>
+      <if test="itemParamNum != null" >
+        item_param_num,
+      </if>
+      <if test="jobTime != null" >
+        job_time,
+      </if>
+      <if test="jobDate != null" >
+        job_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=TINYINT},
+      </if>
+      <if test="itemNum != null" >
+        #{itemNum,jdbcType=BIGINT},
+      </if>
+      <if test="itemUpNum != null" >
+        #{itemUpNum,jdbcType=BIGINT},
+      </if>
+      <if test="itemDownNum != null" >
+        #{itemDownNum,jdbcType=INTEGER},
+      </if>
+      <if test="itemParamNum != null" >
+        #{itemParamNum,jdbcType=BIGINT},
+      </if>
+      <if test="jobTime != null" >
+        #{jobTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobDate != null" >
+        #{jobDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.taotao.pojo.TbSysStatisticsExample" resultType="java.lang.Integer" >
+    select count(*) from tb_sys_statistics
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_sys_statistics
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=TINYINT},
+      </if>
+      <if test="record.itemNum != null" >
+        item_num = #{record.itemNum,jdbcType=BIGINT},
+      </if>
+      <if test="record.itemUpNum != null" >
+        item_up_num = #{record.itemUpNum,jdbcType=BIGINT},
+      </if>
+      <if test="record.itemDownNum != null" >
+        item_down_num = #{record.itemDownNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.itemParamNum != null" >
+        item_param_num = #{record.itemParamNum,jdbcType=BIGINT},
+      </if>
+      <if test="record.jobTime != null" >
+        job_time = #{record.jobTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.jobDate != null" >
+        job_date = #{record.jobDate,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_sys_statistics
+    set id = #{record.id,jdbcType=TINYINT},
+      item_num = #{record.itemNum,jdbcType=BIGINT},
+      item_up_num = #{record.itemUpNum,jdbcType=BIGINT},
+      item_down_num = #{record.itemDownNum,jdbcType=INTEGER},
+      item_param_num = #{record.itemParamNum,jdbcType=BIGINT},
+      job_time = #{record.jobTime,jdbcType=TIMESTAMP},
+      job_date = #{record.jobDate,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.taotao.pojo.TbSysStatistics" >
+    update tb_sys_statistics
+    <set >
+      <if test="itemNum != null" >
+        item_num = #{itemNum,jdbcType=BIGINT},
+      </if>
+      <if test="itemUpNum != null" >
+        item_up_num = #{itemUpNum,jdbcType=BIGINT},
+      </if>
+      <if test="itemDownNum != null" >
+        item_down_num = #{itemDownNum,jdbcType=INTEGER},
+      </if>
+      <if test="itemParamNum != null" >
+        item_param_num = #{itemParamNum,jdbcType=BIGINT},
+      </if>
+      <if test="jobTime != null" >
+        job_time = #{jobTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobDate != null" >
+        job_date = #{jobDate,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.pojo.TbSysStatistics" >
+    update tb_sys_statistics
+    set item_num = #{itemNum,jdbcType=BIGINT},
+      item_up_num = #{itemUpNum,jdbcType=BIGINT},
+      item_down_num = #{itemDownNum,jdbcType=INTEGER},
+      item_param_num = #{itemParamNum,jdbcType=BIGINT},
+      job_time = #{jobTime,jdbcType=TIMESTAMP},
+      job_date = #{jobDate,jdbcType=DATE}
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+</mapper>

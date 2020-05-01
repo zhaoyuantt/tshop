@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/task
+	http://www.springframework.org/schema/task/spring-task.xs
+	">
+
+	<!--給线程池ThreadPoolTaskExecutor注入属性-->
+	<bean id="threadPoolTaskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<!--核心线程数-->
+		<property name="corePoolSize" value="10"></property>
+		<!--最大线程数-->
+		<property name="maxPoolSize" value="20"></property>
+		<!--队列最大长度-->
+		<property name="queueCapacity" value="20"></property>
+		<!--线程池维护所允许的最大空闲时间，默认60s-->
+		<property name="keepAliveSeconds" value="60"></property>
+	</bean>
+
+
+</beans>

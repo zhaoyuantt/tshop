@@ -1,0 +1,12 @@
+127.0.0.1 - - [03/Dec/2019:16:14:40 +0800] "GET / HTTP/1.1" 302 - http-bio-8081-exec-1 119
+127.0.0.1 - - [03/Dec/2019:16:14:41 +0800] "GET /login HTTP/1.1" 200 3922 http-bio-8081-exec-3 909
+127.0.0.1 - - [03/Dec/2019:16:14:46 +0800] "POST /login/submit HTTP/1.1" 200 67 http-bio-8081-exec-5 1979
+127.0.0.1 - - [03/Dec/2019:16:14:46 +0800] "GET / HTTP/1.1" 200 6408 http-bio-8081-exec-6 430
+127.0.0.1 - - [03/Dec/2019:16:14:47 +0800] "GET /css/mycss/index.css HTTP/1.1" 304 - http-bio-8081-exec-8 535
+127.0.0.1 - - [03/Dec/2019:16:14:47 +0800] "GET /js/echarts/theme/dark.js HTTP/1.1" 304 - http-bio-8081-exec-3 752
+127.0.0.1 - - [03/Dec/2019:16:14:47 +0800] "GET /js/common.js HTTP/1.1" 304 - http-bio-8081-exec-9 800
+127.0.0.1 - - [03/Dec/2019:16:14:47 +0800] "GET /js/myjs/index.js HTTP/1.1" 304 - http-bio-8081-exec-1 828
+127.0.0.1 - - [03/Dec/2019:16:14:47 +0800] "GET /js/jquery-easyui-1.4.1/validate/jquery.validate.exp.js HTTP/1.1" 304 - http-bio-8081-exec-7 899
+127.0.0.1 - - [03/Dec/2019:16:14:48 +0800] "GET /js/echarts/echarts.min.js HTTP/1.1" 304 - http-bio-8081-exec-10 1685
+127.0.0.1 - - [03/Dec/2019:16:14:55 +0800] "GET /item/statistics/item HTTP/1.1" 200 61 http-bio-8081-exec-3 1668
+127.0.0.1 - - [03/Dec/2019:16:14:57 +0800] "GET /user/statistics/index HTTP/1.1" 200 85 http-bio-8081-exec-3 911

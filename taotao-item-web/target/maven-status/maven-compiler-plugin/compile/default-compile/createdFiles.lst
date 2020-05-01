@@ -1,0 +1,5 @@
+com\taotao\item\listener\ItemAddForGeneHtmlListener.class
+com\taotao\item\controller\HtmlGenerateController.class
+com\taotao\item\pojo\ItemCustom.class
+com\taotao\item\pojo\Goddess.class
+com\taotao\item\controller\ShowItem.class

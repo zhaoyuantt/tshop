@@ -1,0 +1,16 @@
+com\taotao\service\impl\AdminUserServiceImpl.class
+com\taotao\service\impl\ItemExportXTN.class
+com\taotao\service\impl\ItemExportXTN$PoiWriter.class
+com\taotao\service\impl\ItemServiceImpl.class
+com\taotao\jedis\JedisClient.class
+com\taotao\service\impl\ExportBetchThread.class
+com\taotao\service\impl\ItemParamServiceImpl.class
+com\taotao\jedis\JedisClientPool.class
+com\taotao\service\impl\UserStatisticsServiceImpl.class
+com\taotao\service\impl\ItemDescServiceImpl.class
+com\taotao\service\impl\ItemCatServiceImpl.class
+com\taotao\service\impl\ItemStatisticsServiceImpl.class
+com\taotao\jedis\JedisClientCluster.class
+com\taotao\service\impl\ExportThread.class
+com\taotao\service\impl\ItemServiceImpl$2.class
+com\taotao\service\impl\ItemServiceImpl$1.class

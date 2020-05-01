@@ -1,0 +1,49 @@
+/**
+Create on 2019,Nov 25 2:42 pm
+ */
+.mainBox{
+   /* height: 80%;
+    width: 98%;*/
+    margin: 30px 10px 10px 10px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #95B8E7;
+}
+
+.solid{
+    height: 0%;
+    width: 100%;
+    margin-top: 15px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #95B8E7
+}
+
+.mainBox_toporbuttom{
+    /*width: 95.5%;
+    height: 45%;*/
+    margin: 10px 5px 1px 5px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #95B8E7;
+}
+
+.mainBox_toporbuttom_left{
+    width: 48%;
+    height: 225px;
+    margin: 0px 2.5px 5px 2.5px;
+    float: left;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #95B8E7;
+}
+
+.mainBox_toporbuttom_right{
+    width: 48%;
+    height: 225px;
+    margin: 0px 2.5px 5px 2.5px;
+    float: left;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #95B8E7;
+}

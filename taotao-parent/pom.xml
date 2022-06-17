@@ -37,7 +37,7 @@
 		<activemq.version>5.11.2</activemq.version>
 		<freemarker.version>2.3.23</freemarker.version>
 		<quartz.version>2.2.3</quartz.version>
-		<alibaba.fastjson>1.2.41</alibaba.fastjson>
+		<alibaba.fastjson>1.2.83</alibaba.fastjson>
 		<poi.version>3.16</poi.version>
 	</properties>
 	<dependencyManagement>
